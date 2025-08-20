@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+@font-face {
+    font-family: Parafina_Black;
+    src: url(../assets/fonts/ParafinaTrial-BlackM.otf);
+}
+
+@font-face {
+    font-family: Parafina_Bold;
+    src: url(../assets/fonts/ParafinaTrial-BoldM.otf);
+}
+
+@font-face {
+    font-family: Parafina_Light;
+    src: url(../assets/fonts/ParafinaTrial-LightM.otf);
+}
+
+@font-face {
+    font-family: Parafina_Medium;
+    src: url(../assets/fonts/ParafinaTrial-MediumM.otf);
+}
+
+@font-face {
+    font-family: Parafina_Regular;
+    src: url(../assets/fonts/ParafinaTrial-RegularM.otf);
+}
+
+@font-face {
+    font-family: Parafina_Thin;
+    src: url(../assets/fonts/ParafinaTrial-ThinM.otf);
+}
+
+:root {
+    --tealPrimary: #1abc9c;
+    --RbluePrimary: #3b82f6;
+    --offWhite: #f2f0ef;
+    --lightGray: #d3d3d3;
+    --deepBlack: #0D0D0D;
+}
+
+/* 
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+.heading h2 {
+    font-family: "Parafina_Bold", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+}
+
+
+.action_btn-sec {
+    padding: 10px;
+    color: white;
+}
+
+.action_btn-sec button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: large;
+    background-color: var(--RbluePrimary);
+    color: white;
+    padding: 12px 17px;
+    border: none;
+    border-radius: 5px;
+    /* width: 12vw;
+    height: 40px; */
+    cursor: pointer;
+}
+
+.action_btn-sec a {
+    color: white;
+}
