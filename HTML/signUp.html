@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/formStyle.css">
+    <link rel="stylesheet" href="../CSS/appStyle.css">
     <title>CurrenSync | Signup </title>
 </head>
 
@@ -17,28 +18,30 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="#"><img src="../assets/images/currensync-logo-01.png" width="200px" alt="logo"></a>
+                <a href="#"><img src="../assets/images/currensync-logo-01.png" width="100px" alt="logo"></a>
             </div>
             <div class="nav-links">
                 <ul>
-                    <li><a href="./home.html">HOME</a></li>
-                    <li><a href="./about.html">ABOUT</a></li>
-                    <li><a href="./converter.html">CONVERTER</a></li>
-                    <li><a href="./topConversions.html">TOP CONVERSIONS</a></li>
+                    <li><a href="#signup_card">HOME</a></li>
+                    <li><a href="#signup_card">ABOUT</a></li>
+                    <li><a href="#signup_card">CONVERTER</a></li>
+                    <li><a href="#signup_card">TOP CONVERSIONS</a></li>
                 </ul>
+            </div>
+            <div class="action_btn-sec login_nav-btn">
+                <button>
+                    <a href="./login.html">Log In</a>
+                </button>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="">
+        <div class="card" id="signup_card">
             <h3>Create Your Account</h3>
             <div class="header-sec">
                 <p>Please Registration with email or signup <br> to continue using <b>CurrenSync</b></p>
             </div>
-        </div>
-
-        <div class="card">
             <div class="social_icon-sec">
                 <a href="">Enter via social networks</a>
                 <div class="social_icons">
@@ -89,16 +92,57 @@
         </div>
     </div>
 
-    <!-- <div class="success">
-        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-        <div class="success-heading"><h3>Success</h3></div>
-        <div class="success-msg"><p>${}</p></div>
-        <div class="action_btn-sec">
-            <button >
-                <a href="./index.html">OK</a>
-            </button>
+    <footer>
+        <div class="footer">
+            <div class="imgs">
+                <div class="logo"><a href="#"><img src="../assets/images/currensync-logo-01.png" width="120px"
+                            alt=""></a></div>
+                <div class="get-app">
+                    <a href=""><img src="../assets/images/png-transparent-google-play-store.png" width="150px"
+                            alt=""></a>
+                    <a href=""><img src="../assets/images/App_Store_Logo.png" width="150px" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- <hr width="70%"> -->
+            <div class="footer-nav-links">
+                <ul>
+                    <li><a href="#signup_card">HOME</a></li>
+                    <li><a href="#signup_card">ABOUT</a></li>
+                    <li><a href="#signup_card">CONVERTER</a></li>
+                    <li><a href="#signup_card">TOP CONVERSIONS</a></li>
+                </ul>
+                <p>Trusted by <br><a href="https://www.exchangerate-api.com/"><img src="../assets/images/erapi.png"
+                            width="180px" alt=""></a></p>
+                <div class="social-links">
+                    <ul>
+                        <li><a href="">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li><a href="">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </li>
+                        <li><a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li><a href="">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div> -->
+        <div class="sub-footer">
+            <p>&copy; <span id="year"></span> CurrenSync. All rights reserved.</p>
+            <p>
+                <a href="">Privacy Policy</a> | <a href="">Terms</a>
+            </p>
+        </div>
+    </footer>
 
     <script src="../JS/forms.js"></script>
     <script src="https://kit.fontawesome.com/6c4078df96.js" crossorigin="anonymous"></script>
