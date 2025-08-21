@@ -58,22 +58,77 @@ body {
   font-weight: <weight>;
   font-style: normal;
 } */
-.heading h2 {
-    font-family: "Parafina_Bold", sans-serif;
+
+a {
+    text-decoration: none;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.nav-links ul {
+section {
     display: flex;
     justify-content: center;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    height: 80vh;
+    /* margin: 50px; */
+    padding: 10%;
+}
+
+li {
+    list-style: none;
+}
+
+.heading h2 {
+    font-family: "Parafina_Bold", sans-serif;
+}
+
+/* header {
+    position: sticky;
+} */
+
+.navbar {
+    background-color: var(--RbluePrimary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10%;
+    padding: 20px 50px;
+    position: relative;
+
+}
+
+.nav-links ul {
+    font-weight: 500;
+    display: flex;
+    /* justify-content: center; */
+    margin: 0 auto;
+    padding: 0;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a {
+    color: var(--offWhite);
+}
+
+.nav-links a:hover {
+    color: var(--lightGray);
+    /* animation: ease-in-out; */
+}
 
 .action_btn-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 10px;
     color: white;
 }
@@ -94,4 +149,63 @@ body {
 
 .action_btn-sec a {
     color: white;
+}
+
+
+/* Footer */
+
+.footer {
+    padding: 30px 20px;
+    background-color: var(--tealPrimary);
+}
+
+.imgs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer a {
+    color: var(--offWhite);
+}
+
+.footer ul {
+    font-weight: 500;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 15px;
+}
+
+.footer-nav-links {
+    padding: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    align-items: center;
+}
+
+.social-links li {
+    color: var(--RbluePrimary);
+    font-size: 30px;
+    gap: 70px;
+}
+
+.sub-footer {
+    background-color: var(--deepBlack);
+    color: var(--lightGray);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sub-footer p {
+    margin: 15px;
+}
+
+.sub-footer a {
+    color: var(--lightGray);
+}
+
+.sub-footer a:hover {
+    color: var(--tealPrimary);
 }
