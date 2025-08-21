@@ -182,6 +182,7 @@ li {
     justify-content: center;
     gap: 130px;
     align-items: center;
+    color: var(--offWhite);
 }
 
 .social-links li {
@@ -208,4 +209,16 @@ li {
 
 .sub-footer a:hover {
     color: var(--tealPrimary);
+}
+
+
+.login_nav-btn button {
+    background-color: var(--offWhite);
+}
+.login_nav-btn button:hover {
+    background-color: var(--lightGray);
+}
+
+.login_nav-btn a {
+    color: var(--RbluePrimary);
 }
