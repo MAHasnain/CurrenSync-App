@@ -46,6 +46,7 @@ body {
 :root {
     --tealPrimary: #1abc9c;
     --RbluePrimary: #3b82f6;
+    --RblueSecondary: #195dfd;
     --offWhite: #f2f0ef;
     --lightGray: #d3d3d3;
     --deepBlack: #0D0D0D;
@@ -118,11 +119,19 @@ li {
 
 .nav-links a {
     color: var(--offWhite);
+    transition: .5s;
 }
 
 .nav-links a:hover {
     color: var(--lightGray);
     /* animation: ease-in-out; */
+}
+
+.active {
+    background-color: var(--RblueSecondary);
+    padding: 12px 17px;
+    border: none;
+    border-radius: 5px;
 }
 
 .action_btn-sec {
@@ -146,6 +155,7 @@ li {
     /* width: 12vw;
     height: 40px; */
     cursor: pointer;
+    transition: .5s;
 }
 
 .action_btn-sec a {
@@ -198,6 +208,7 @@ li {
     /* wid eth: 12vw;
     height: 40px; */
     cursor: pointer;
+    transition: .5s;
 }
 
 .card button:hover {
@@ -247,6 +258,40 @@ li {
     align-items: start;
     padding: 100px 0 0 50px;
     gap: 50px;
+}
+
+.cta-section button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    background-color: var(--RbluePrimary);
+    color: white;
+    padding: 12px 17px;
+    border: none;
+    border-radius: 5px;
+    /* width: 12vw;
+    height: 40px; */
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    transition: .5s;
+}
+
+.cta-section i {
+    font-size: x-large;
+    transition: 0.5s;
+}
+
+.cta-section i:hover {
+    font-size: xx-large;
+}
+
+.cta-section button:hover {
+    background-color: var(--RblueSecondary);
 }
 
 /* Footer */
@@ -302,6 +347,7 @@ li {
 
 .sub-footer a {
     color: var(--lightGray);
+    transition: 0.5s;
 }
 
 .sub-footer a:hover {
@@ -311,6 +357,7 @@ li {
 
 .login_nav-btn button {
     background-color: var(--offWhite);
+    transition: 0.5s;
 }
 
 .login_nav-btn button:hover {
