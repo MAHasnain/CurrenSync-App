@@ -35,9 +35,38 @@
     <section>
         <div class="container hero">
             <div class="heading">
-                <h3>
-                    This Page is under Development.
-                </h3>
+                <h2>
+                    Convert Currencies Instantly with Live Exchange Rates
+                </h2>
+                <p>
+                    Get real-time and accurate rates for over 100+ currencies worldwide.
+                </p>
+            </div>
+            <div class="converter_form">
+                <form action="">
+                    <div class="">
+                        <div class="base_sec">
+                            <label for="base" id="base-label"></label>
+                            <select name="base" id="base-select">
+                            </select>
+                        </div>
+                        <div class="flip-btn">
+                            <button><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                        </div>
+                        <div class="targeted_sec">
+                            <label for="targeted" id="targeted-label"></label>
+                            <select name="targeted" id="targeted-select">
+                            </select>
+                        </div>
+                        <div class="">
+                            <label for="amount">Amount</label>
+                            <input type="text" class="" id="amountInput">
+                        </div>
+                        <button id="conversion_btn" type="submit">
+                            Convert
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -95,6 +124,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/6c4078df96.js" crossorigin="anonymous"></script>
+    <script src="../JS/fetchData.js"></script>
 </body>
 
 </html>
