@@ -60,7 +60,7 @@
                         </div>
                         <div class="">
                             <label for="amount">Amount</label>
-                            <input type="text" class="" id="amountInput" value="0">
+                            <input type="number" class="" id="amountInput" value="0">
                         </div>
                         <button id="conversion_btn" type="submit">
                             Convert
@@ -69,8 +69,17 @@
                 </form>
             </div>
             <div class="result">
-                <p id="conversion-rate"></p>
-                <p id="conversion-result"></p>
+
+                <div id="conversion-rate-sec">
+                    <label id="conversion-rate-label" for=""></label>
+                    <p id="conversion-rate"></p>
+                </div>
+
+                <div id="conversion-result-sec">
+                    <label id="conversion-result-label" for=""></label>
+                    <p id="conversion-result"></p>
+                </div>
+                
             </div>
         </div>
     </section>

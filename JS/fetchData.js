@@ -2,6 +2,8 @@ const API_KEY = "3f4bbc7fd68ddceeb2cf6791";
 
 const StdEndPoint = `https://v6.exchangerate-api.com/v6/${API_KEY}`;
 const PairEndPoint = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/EUR/GBP`;
+const enrichedData = `https://v6.exchangerate-api.com/v6/${API_KEY}/enriched/GBP/PKR`
+const supportedCodes = `https://v6.exchangerate-api.com/v6/${API_KEY}/codes`
 
 const conversion_btn = document.getElementById("conversion_btn");
 const amountInput = document.getElementById("amountInput");
@@ -10,11 +12,14 @@ const target_select = document.querySelector("#target-select");
 const conversionResult = document.querySelector("#conversion-result")
 const conversionRate = document.querySelector("#conversion-rate")
 
-let base_label = "From";
-let target_label = "To";
+let base_label_text = "From";
+let target_label_text = "To";
 
 const baseLabel = document.querySelector("#base-label")
 const targetLabel = document.querySelector("#target-label")
+
+const conversionRate_label = document.querySelector("#conversion-rate-label")
+const conversionResult_label = document.querySelector("#conversion-result-label")
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -52,8 +57,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 // console.log(base_select.children[0].value);
                 // console.log(target_select.children[0].value);
 
+
+                conversionRate_label.textContent = `Conversion Rate`
+                conversionResult_label.textContent = `Conversion Result`
                 conversionRate.textContent = result?.conversion_rate;
                 conversionResult.textContent = result?.conversion_result;
+
             } catch (error) {
                 console.error(error)
             }
@@ -63,6 +72,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 })
 
+baseLabel.textContent = base_label_text
+targetLabel.textContent = target_label_text
 
 // Swap Button functionality
 const swap_btn = document.querySelector("#swap-btn")
