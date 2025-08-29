@@ -23,26 +23,35 @@ const conversionResult_label = document.querySelector("#conversion-result-label"
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        let response = await fetch(`${StdEndPoint}/latest/PKR`)
+        let response = await fetch(`${StdEndPoint}/codes`)
         let data = await response.json();
-        // console.log(data);
-        console.log(Object.keys(data?.conversion_rates));
-        const currCodes = Object.keys(data?.conversion_rates);
+        console.log(data);
+        console.log(data?.supported_codes);
+        const currCodes = data?.supported_codes;
         currCodes.map(cod => {
-            base_select.innerHTML += `<option value="${cod}">${cod}</option>`;
-            target_select.innerHTML += `<option value="${cod}">${cod}</option>`;
-
+            base_select.innerHTML += `<option value="${cod[0]}">
+            <ul>
+            <li>${cod[0]}</li>
+            <li>${cod[1]}</li>
+            </ul>
+            </option>`;
+            target_select.innerHTML += `<option value="${cod[0]}">
+            <ul>
+            <li>${cod[0]}</li>
+            <li>${cod[1]}</li>
+            </ul>
+            </option>`;
         })
         // const targetOption = document.getElementById("targetOption");
         // const baseOption = document.getElementById("baseOption");
 
-        console.log(base_select.value);
+        // console.log(base_select.value);
 
-        if (target_select.value == "PKR") {
-            // target_select.textContent = "USD";
-            target_select.value = "USD";
-        }
-        console.log(target_select.value);
+        // if (target_select.value == "PKR") {
+        //     // target_select.textContent = "USD";
+        //     target_select.value = "USD";
+        // }
+        // console.log(target_select.value);
 
         conversion_btn.addEventListener("click", async e => {
             e.preventDefault();
