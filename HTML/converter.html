@@ -60,7 +60,7 @@
                         </div>
                         <div class="">
                             <label for="amount">Amount</label>
-                            <input type="number" class="" id="amountInput" value="0">
+                            <input type="number" min="0" class="" id="amountInput" value="0">
                         </div>
                         <button id="conversion_btn" type="submit">
                             Convert
@@ -70,16 +70,13 @@
             </div>
             <div class="result">
 
-                <div id="conversion-rate-sec">
-                    <label id="conversion-rate-label" for=""></label>
-                    <p id="conversion-rate"></p>
-                </div>
-
                 <div id="conversion-result-sec">
                     <label id="conversion-result-label" for=""></label>
                     <p id="conversion-result"></p>
                 </div>
-                
+
+                <div id="conversion-rate-sec" class="conversion-rate">
+                </div>
             </div>
         </div>
     </section>

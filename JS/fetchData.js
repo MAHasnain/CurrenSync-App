@@ -10,13 +10,14 @@ const amountInput = document.getElementById("amountInput");
 const base_select = document.querySelector("#base-select");
 const target_select = document.querySelector("#target-select");
 const conversionResult = document.querySelector("#conversion-result")
-const conversionRate = document.querySelector("#conversion-rate")
+const conversionRateSec = document.querySelector("#conversion-rate-sec")
 
 let base_label_text = "From";
 let target_label_text = "To";
 
 const baseLabel = document.querySelector("#base-label")
 const targetLabel = document.querySelector("#target-label")
+const swap_btn = document.querySelector("#swap-btn")
 
 const conversionRate_label = document.querySelector("#conversion-rate-label")
 const conversionResult_label = document.querySelector("#conversion-result-label")
@@ -25,8 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         let response = await fetch(`${StdEndPoint}/codes`)
         let data = await response.json();
-        console.log(data);
-        console.log(data?.supported_codes);
+        // console.log(data);
+        // console.log(data?.supported_codes);
         const currCodes = data?.supported_codes;
         currCodes.map(cod => {
             base_select.innerHTML += `<option value="${cod[0]}">
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             <li>${cod[1]}</li>
             </ul>
             </option>`;
+            base_select.value = "PKR";
+            target_select.value = "TRY";
         })
         // const targetOption = document.getElementById("targetOption");
         // const baseOption = document.getElementById("baseOption");
@@ -62,33 +65,80 @@ document.addEventListener("DOMContentLoaded", async () => {
                 let response = await fetch(PairAmountEndPoint)
                 // console.log(response);
                 let result = await response.json();
-                console.log(result);
+                // console.log(result);
                 // console.log(base_select.children[0].value);
                 // console.log(target_select.children[0].value);
 
+                conversionResult_label.textContent = `${amountInput.value} ${base_select.value} =`
+                let conversion_result = result?.conversion_result
+                conversionResult.textContent = `${conversion_result} ${target_select.value}`;
 
-                conversionRate_label.textContent = `Conversion Rate`
-                conversionResult_label.textContent = `Conversion Result`
-                conversionRate.textContent = result?.conversion_rate;
-                conversionResult.textContent = result?.conversion_result;
+                try {
+                    const baseToTrgt = await fetch(`${StdEndPoint}/pair/${base_select.value}/${target_select.value}/1`)
+                    const updtData = await baseToTrgt.json()
+                    console.log(updtData);
+                    conversionRateSec.innerHTML = `<p>1 ${updtData?.base_code} = ${updtData?.conversion_rate} ${updtData?.target_code}</p>`
+                } catch (error) {
+                    console.error(error);
+                }
+
+                try {
+                    const trgtToBase = await fetch(`${StdEndPoint}/pair/${target_select.value}/${base_select.value}/1`);
+                    const updtData = await trgtToBase.json();
+                    console.log(updtData);
+                    conversionRateSec.innerHTML += `<p>1 ${updtData?.base_code} = ${updtData?.conversion_rate} ${updtData?.target_code}</p>`
+
+                } catch (error) {
+                    console.error(error);
+                }
 
             } catch (error) {
                 console.error(error)
             }
         })
+
+        baseLabel.textContent = base_label_text
+        targetLabel.textContent = target_label_text
+
+        swap_btn.addEventListener("click", async e => {
+            e.preventDefault()
+
+            // Dropdown Values swapping
+            let temp = base_select.value;
+            base_select.value = target_select.value
+            target_select.value = temp
+
+            // result section values swapping
+
+            conversionResult_label.textContent = `${amountInput.value} ${base_select.value} =`
+
+            const convrsnRslt = await fetch(`${StdEndPoint}/pair/${base_select.value}/${target_select.value}/${amountInput.value}`)
+            const res = await convrsnRslt.json()
+
+            conversionResult.textContent = `${res?.conversion_result} ${target_select.value}`;
+            // console.log(conversion_result);
+            try {
+                const baseToTrgt = await fetch(`${StdEndPoint}/pair/${base_select.value}/${target_select.value}/1`)
+                const updtData = await baseToTrgt.json()
+                // console.log(updtData);
+                conversionRateSec.innerHTML = `<p>1 ${updtData?.base_code} = ${updtData?.conversion_rate} ${updtData?.target_code}</p>`
+            } catch (error) {
+                console.error(error);
+            }
+
+            try {
+                const trgtToBase = await fetch(`${StdEndPoint}/pair/${target_select.value}/${base_select.value}/1`);
+                const updtData = await trgtToBase.json();
+                // console.log(updtData);
+                conversionRateSec.innerHTML += `<p>1 ${updtData?.base_code} = ${updtData?.conversion_rate} ${updtData?.target_code}</p>`
+
+            } catch (error) {
+                console.error(error);
+            }
+        })
+
     } catch (error) {
         console.error(error)
     }
 })
 
-baseLabel.textContent = base_label_text
-targetLabel.textContent = target_label_text
-
-// Swap Button functionality
-const swap_btn = document.querySelector("#swap-btn")
-swap_btn.addEventListener("click", e => {
-    e.preventDefault();
-
-})
-
-// Convert amount
