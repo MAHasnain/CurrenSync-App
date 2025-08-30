@@ -367,3 +367,7 @@ li {
 .login_nav-btn a {
     color: var(--RbluePrimary);
 }
+
+.hidden {
+    display: none;
+}
