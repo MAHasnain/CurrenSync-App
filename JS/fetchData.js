@@ -24,6 +24,10 @@ const swap_btn = document.querySelector("#swap-btn")
 const conversionRate_label = document.querySelector("#conversion-rate-label")
 const conversionResult_label = document.querySelector("#conversion-result-label")
 
+// TOP CONVERSION PAGE
+const mainHeading = document.getElementById("main_heading");
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         let response = await fetch(`${StdEndPoint}/codes`)
@@ -47,16 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             base_select.value = "PKR";
             target_select.value = "TRY";
         })
-        // const targetOption = document.getElementById("targetOption");
-        // const baseOption = document.getElementById("baseOption");
 
-        // console.log(base_select.value);
-
-        // if (target_select.value == "PKR") {
-        //     // target_select.textContent = "USD";
-        //     target_select.value = "USD";
-        // }
-        // console.log(target_select.value);
 
         conversion_btn.addEventListener("click", async e => {
             e.preventDefault();
@@ -115,6 +110,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         baseLabel.textContent = base_label_text
         targetLabel.textContent = target_label_text
 
+
         swap_btn.addEventListener("click", async e => {
             e.preventDefault()
 
@@ -159,4 +155,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error(error)
     }
 })
-
