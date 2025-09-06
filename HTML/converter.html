@@ -42,9 +42,9 @@
                     Get real-time and accurate rates for over 100+ currencies worldwide.
                 </p>
             </div>
-            <div class="converter_form">
+            <div class="converter_sec">
                 <form action="">
-                    <div class="">
+                    <div class="converter_form">
                         <div class="base_sec">
                             <label for="base" id="base-label"></label>
                             <select name="base" id="base-select">
@@ -58,28 +58,29 @@
                             <select name="target" id="target-select">
                             </select>
                         </div>
-                        <div class="">
-                            <label for="amount">Amount</label>
-                            <input type="number" min="0" class="" id="amountInput" value="0">
+                        <div class="amount-and-btn">
+                            <div class="amount-sec">
+                                <label for="amount">Amount</label>
+                                <input type="number" min="0" class="" id="amountInput" value="0">
+                            </div>
+                            <button id="conversion_btn" type="submit">
+                                Convert
+                            </button>
                         </div>
-                        <button id="conversion_btn" type="submit">
-                            Convert
-                        </button>
+                        <div class="result ">
+                            <div class="errorMsg "></div>
+                            <div class="" id="result">
+                                <div id="conversion-result-sec" class="">
+                                    <label id="conversion-result-label" for=""></label>
+                                    <p id="conversion-result"></p>
+                                </div>
+
+                                <div id="conversion-rate-sec" class="conversion-rate ">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
-            </div>
-            <div class="result ">
-
-                <div class="errorMsg "></div>
-                <div class="" id="result">
-                    <div id="conversion-result-sec" class="">
-                        <label id="conversion-result-label" for=""></label>
-                        <p id="conversion-result"></p>
-                    </div>
-
-                    <div id="conversion-rate-sec" class="conversion-rate ">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
